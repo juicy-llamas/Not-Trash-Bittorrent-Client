@@ -34,7 +34,7 @@ test: $(TEST_O)
 	num_s=0;										\
 	echo "" >> test_log;									\
 	echo "" >> test_log;									\
- 	for i in $$(find $(TDIR) -maxdepth 1 -type f); do					\
+ 	for i in $$(find $(TDIR) \( ! -path *skipped/* \) -a -type f); do			\
 		i=$${i#$(TDIR)/};								\
 		echo "========================================" | tee -a test_log;		\
 		echo "	test $$i" | tee -a test_log;						\

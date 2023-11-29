@@ -63,6 +63,11 @@ enum BencodeType bencode_get_the_type_of_the_next_thing ( struct BencodeInstance
 size_t bencode_get_int_value ( struct BencodeInstance* ptr ) {
 	size_t ret = 0;
 
+	assert( ptr );
+
+	while ( ptr
+
+
 	return ret;
 }
 
